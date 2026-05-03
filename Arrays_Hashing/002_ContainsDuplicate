@@ -6,3 +6,13 @@ public:
         
     }
 };
+//Loop add (structure build)
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        for(int num : nums) {
+            
+        }
+        return false;
+    }
+};
