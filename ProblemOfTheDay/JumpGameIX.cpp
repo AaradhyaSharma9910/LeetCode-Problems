@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Time Complexity: O(n) -> single traversal for prefix/suffix + single traversal for answer array
+// Space Complexity: O(n) -> extra prefix max, suffix min, and answer arrays used
 
 class Solution {
 public:
