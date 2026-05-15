@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+// Idea: Store maximum till each index (prefix max) and minimum from each index to end (suffix min)
+// If left side max > right side min, current partition is invalid so inherit next answer
 // Time Complexity: O(n) -> single traversal for prefix/suffix + single traversal for answer array
 // Space Complexity: O(n) -> extra prefix max, suffix min, and answer arrays used
 
