@@ -10,4 +10,14 @@ During the breadth-first search, for the current index i in the queue q, we cons
 
 Adjacent movement: move to i−1 or i+1.
 Jump movement: for each prime factor p of nums[i], jump to all indices j stored in edges[p].
-We return the depth of the BFS once index 0 is reached.*/
+We return the depth of the BFS once index 0 is reached.
+Complexity Analysis
+Let MX be the maximum value in the array, and let n be the length of the array.
+
+Time complexity: O(MXlogMX)+O(nlogMX).
+
+The preprocessing step takes O(MXlogMX).
+The BFS traversal takes O(nlogMX), since each index and each prime factor group is processed at most once.
+Space complexity: O(MXloglogMX).
+
+This is primarily used to store the prime factor table.*/
