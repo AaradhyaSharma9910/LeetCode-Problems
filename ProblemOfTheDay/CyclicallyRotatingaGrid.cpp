@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-
 class Solution {
 public:
 
@@ -54,13 +52,14 @@ public:
 
             // counter-clockwise rotation
             for(int i = 0; i < len; i++) {
-                rotated[(i + len - rot) % len] = elems[i];
+                rotated[i] = elems[(i + rot) % len];
             }
 
             // place back
             for(int i = 0; i < len; i++) {
 
-                auto [x, y] = pos[i];
+                int x = pos[i].first;
+                int y = pos[i].second;
 
                 grid[x][y] = rotated[i];
             }
