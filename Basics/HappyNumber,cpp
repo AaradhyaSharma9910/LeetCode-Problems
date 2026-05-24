@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+int squareSum(int n){
+    int sum = 0;
+    while ( n!=0){
+        int digits = n%10;
+        sum += digits*digits;
+        n/=10;
+
+    }
+    return sum;
+}
+    bool isHappy(int n) {
+        unordered_set<int> usedIntegers;
+        while(true){
+      int sum = squareSum(n);
+      if(sum == 1)
+      return true;
+      n = sum;
+      if(usedIntegers.count(n))
+      return false;
+      usedIntegers.insert(n);
+        }
+    }
+};
