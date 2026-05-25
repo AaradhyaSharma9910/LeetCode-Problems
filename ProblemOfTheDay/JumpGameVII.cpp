@@ -22,3 +22,20 @@ public:
         
     }
 };
+// Time Complexity: O(n)
+// Each index is processed only once using prefix sum.
+
+// Space Complexity: O(n)
+// Difference array is used to store reachable ranges efficiently.
+
+// Approach:
+// Difference Array + Prefix Sum + Greedy Reachability
+
+// count > 0 means current index is reachable.
+// Instead of marking every reachable position individually,
+// we mark reachable ranges in O(1):
+//
+// arr[l] += 1
+// arr[r+1] -= 1
+//
+// Prefix sum reconstructs active reachable ranges.
