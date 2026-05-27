@@ -22,3 +22,30 @@ public:
         return count;
     }
 };
+/*
+Theory:
+We store:
+1. Last occurrence index of every lowercase letter.
+2. First occurrence index of every uppercase letter.
+
+A character is considered special if:
+- Both lowercase and uppercase versions exist.
+- The lowercase letter appears before the uppercase letter.
+
+Example:
+"aA" -> special
+"Aa" -> not special
+
+Time Complexity:
+O(n + 26)
+- O(n) for traversing the string
+- O(26) for checking all alphabets
+
+Overall TC: O(n)
+
+Space Complexity:
+O(26 + 26)
+
+Overall SC: O(1)
+since alphabet size is constant.
+*/
