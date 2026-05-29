@@ -20,3 +20,11 @@ public:
         return ans;
     }
 };
+/*
+APPROACH - So what we did here is that first we calculated the sum of the digits seprately 
+by making a function named digitSum then we created another function minElement in which we 
+calculated the minimum number that we got after calculting the sum of the digits
+Time Complexity is = O(n*d) where d is digit and since digit is constant so its 
+time complexity is approximately equal to O(n)
+Space Complexity = O(1)
+*/
