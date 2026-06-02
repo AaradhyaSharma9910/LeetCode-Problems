@@ -1,3 +1,32 @@
+/*
+Approach:
+There are two possible orders to complete the rides:
+
+1. Land -> Water
+   - First, find the earliest time at which any land ride can finish.
+   - For each water ride, start it at:
+        max(earliestLandFinish, waterStartTime[i])
+   - Calculate its finish time and keep the minimum.
+
+2. Water -> Land
+   - First, find the earliest time at which any water ride can finish.
+   - For each land ride, start it at:
+        max(earliestWaterFinish, landStartTime[i])
+   - Calculate its finish time and keep the minimum.
+
+The answer is the minimum completion time among both possible orders.
+
+Time Complexity:
+O(n + m)
+- One pass to find earliest land finish.
+- One pass to find earliest water finish and Land -> Water answer.
+- One pass to find Water -> Land answer.
+
+Space Complexity:
+O(1)
+- Only a few variables are used.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
