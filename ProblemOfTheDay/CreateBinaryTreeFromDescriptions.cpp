@@ -55,10 +55,10 @@ public:
             childNodes.insert(child);
         }
 
-        for (auto &[val, node] : mp) {
-            if (!childNodes.count(val))
-                return node;
-        }
+ for (auto &it : mp) {
+    if (!childNodes.count(it.first))
+        return it.second;
+}
 
         return nullptr;
     }
