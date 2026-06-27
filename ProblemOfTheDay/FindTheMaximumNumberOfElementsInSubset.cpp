@@ -13,7 +13,9 @@ public:
             int cnt = mp[1];
             ans = max(ans,cnt % 2 ? cnt : cnt - 1);
         }
-        for(auto &[num, f] : mp){
+        for(auto &it : mp){
+            long long num = it.first;
+            int f = it.second;
             if(num == 1) continue;
 
             long long x = num;
