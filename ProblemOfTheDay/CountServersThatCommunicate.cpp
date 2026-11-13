@@ -1,48 +1,33 @@
-#include<bits/stdc++.h>
-using namespace std;
+
 class Solution {
 public:
     int countServers(vector<vector<int>>& grid) {
-        int numRows = grid.size(), numCols = grid[0].size();
-        int communicableServersCount = 0;
+        int m = grid.size();
+        int n = grid[0].size();
 
-        // Traverse through the grid
-        for (int row = 0; row < numRows; ++row) {
-            for (int col = 0; col < numCols; ++col) {
-                if (grid[row][col] == 1) {
-                    bool canCommunicate = false;
+        vector<int> rows(m, 0);
+        vector<int> cols(n, 0);
 
-                    // Check for communication in the same row
-                    for (int otherCol = 0; otherCol < numCols; ++otherCol) {
-                        if (otherCol != col && grid[row][otherCol] == 1) {
-                            canCommunicate = true;
-                            break;
-                        }
-                    }
-
-                    // If a server was found in the same row, increment
-                    // communicableServersCount
-                    if (canCommunicate) {
-                        communicableServersCount++;
-                    } else {
-                        // Check for communication in the same column
-                        for (int otherRow = 0; otherRow < numRows; ++otherRow) {
-                            if (otherRow != row && grid[otherRow][col] == 1) {
-                                canCommunicate = true;
-                                break;
-                            }
-                        }
-
-                        // If a server was found in the same column, increment
-                        // communicableServersCount
-                        if (canCommunicate) {
-                            communicableServersCount++;
-                        }
-                    }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) {
+                    rows[i]++;
+                    cols[j]++;
                 }
             }
         }
 
-        return communicableServersCount;
+        int ans = 0;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1 &&
+                    (rows[i] > 1 || cols[j] > 1)) {
+                    ans++;
+                }
+            }
+        }
+
+        return ans;
     }
 };
